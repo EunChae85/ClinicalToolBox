@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Clinical ToolBox
 
-## Getting Started
+[![Netlify Status](https://api.netlify.com/api/v1/badges/your-site-id/deploy-status)](https://app.netlify.com/start/deploy?repository=https://github.com/EunChae85/ClinicalToolBox)
 
-First, run the development server:
+**Essential CRA & CRC Productivity Suite**
+
+One-stop toolkit for clinical trial professionals (CRA/CRC) to handle daily calculations, visit scheduling, and compliance monitoring with precision and ease.
+
+## 🚀 Key Features
+
+- **Unit Converter**: Mass, length, and temperature conversions tailored for clinical data.
+- **Dose & Dilution**: Rapidly calculate weight-based dosing and concentration volumes.
+- **Renal Function**: eGFR (CKD-EPI 2021) and CrCl (Cockcroft-Gault) calculators.
+- **Visit Window Scheduler**: Generate full visit schedules with target dates and window ranges.
+- **Compliance Monitoring**: Automated compliance percentage calculation with missed dose adjustments.
+- **Universal Export**: Export any screen's results to **PDF**, **Excel**, or **CSV** with one click.
+
+## 🛠 Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Styling**: Tailwind CSS
+- **Design System**: Shadcn/UI
+- **i18n**: Next-intl (Korean & English Support)
+- **Utilities**: Lucide Icons, Date-fns, JsPDF, SheetJS
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm/yarn/pnpm
+
+### Installation
+
+```bash
+git clone https://github.com/EunChae85/ClinicalToolBox.git
+cd ClinicalToolBox
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the application locally.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🌐 Deployment on Netlify
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Go to [Netlify Dashboard](https://app.netlify.com/).
+2. Click **Add new site** > **Import an existing project**.
+3. Select **GitHub** and authorize.
+4. Search for `ClinicalToolBox`.
+5. Keep default build settings (`next build` / `.next`).
+6. Click **Deploy ClinicalToolBox**.
 
-## Learn More
+## 📝 License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License.

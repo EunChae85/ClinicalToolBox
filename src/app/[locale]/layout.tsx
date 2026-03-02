@@ -19,8 +19,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Clinical ToolBox",
-  description: "Essential utilities for Clinical Research Associates",
+  title: "Clinical ToolBox | CRA & CRC Productivity Suite",
+  description: "Essential calculation, schedule, and conversion tools for Clinical Research Associates (CRA) and Coordinators (CRC). Minimized input, clear results - available in PDF/Excel.",
+  keywords: ["CRA", "CRC", "Clinical Trial", "Compliance Calculator", "Visit Schedule", "CRF", "CRO"],
+  authors: [{ name: "Clinical ToolBox Team" }],
+  openGraph: {
+    title: "Clinical ToolBox",
+    description: "One stop shop for Clinical Research productivity tools.",
+    type: "website",
+    locale: "ko_KR",
+  }
 };
 
 export default async function RootLayout(
