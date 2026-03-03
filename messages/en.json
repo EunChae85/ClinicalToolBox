@@ -91,5 +91,13 @@
     "wtChange": "Weight Change %",
     "baselineWt": "Baseline Weight",
     "currentWt": "Current Weight"
+  },
+  "Feedback": {
+    "title": "Send Feedback",
+    "floatingBtn": "Feedback",
+    "footerTitle": "Thank you for visiting!",
+    "footerDesc": "Users from clinical sites worldwide are joining us.",
+    "footerCallToAction": "If there are features you want to add or improvements you'd like to suggest, please feel free to let us know. We build quickly!",
+    "buttonLabel": "Suggest a Feature"
   }
 }

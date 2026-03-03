@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import FeedbackButton from '@/components/common/FeedbackButton';
 import Script from 'next/script';
 import "../globals.css";
 
@@ -75,6 +76,7 @@ export default async function RootLayout(
               {props.children}
             </main>
             <Footer />
+            <FeedbackButton />
           </div>
         </NextIntlClientProvider>
       </body>
