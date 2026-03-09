@@ -8,6 +8,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import FeedbackButton from '@/components/common/FeedbackButton';
 import Script from 'next/script';
+import AdSlot from '@/components/ads/AdSlot';
 import "../globals.css";
 
 const geistSans = Geist({
@@ -58,6 +59,12 @@ export default async function RootLayout(
           src="https://www.googletagmanager.com/gtag/js?id=G-VQ7BKLYPY3"
           strategy="afterInteractive"
         />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4456192191942998"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -75,6 +82,7 @@ export default async function RootLayout(
             <main className="flex-grow">
               {props.children}
             </main>
+            <AdSlot slot="site-footer" />
             <Footer />
             <FeedbackButton />
           </div>

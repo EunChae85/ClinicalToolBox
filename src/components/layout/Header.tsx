@@ -33,6 +33,9 @@ export default function Header() {
                     <Link href="/calculators" className={pathname.startsWith('/calculators') ? "font-semibold text-primary" : "text-muted-foreground hover:text-foreground transition-colors"}>
                         {tNav('calculators')}
                     </Link>
+                    <Link href="/guides" className={pathname.startsWith('/guides') ? "font-semibold text-primary" : "text-muted-foreground hover:text-foreground transition-colors"}>
+                        {tNav('guides')}
+                    </Link>
                 </nav>
                 <div className="flex items-center gap-4">
                     <select

@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label';
 import { ExportButtons } from '@/components/common/ExportButtons';
 import { exportToCSV, exportToExcel, exportToPDF } from '@/lib/exportUtils';
 import { Button } from '@/components/ui/button';
+import AdSlot from '@/components/ads/AdSlot';
 
 // Sub-components for each tab
 function UnitConverter() {
@@ -430,6 +431,10 @@ export default function CalculatorsPage() {
                     onExportCSV={handleExportExcel}
                 />
             </div>
+
+            <AdSlot slot="clinical-bottom" />
+
+
         </div>
     );
 }

@@ -17,6 +17,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { FlagList, Flag } from '@/components/common/FlagList';
 import { ExportButtons } from '@/components/common/ExportButtons';
 import { exportToCSV, exportToExcel, exportToPDF } from '@/lib/exportUtils';
+import AdSlot from '@/components/ads/AdSlot';
 
 const visitSchema = z.object({
     name: z.string().min(1, 'Required'),
@@ -263,6 +264,9 @@ export default function SchedulePage() {
                                 onExportCSV={handleExportCSV}
                             />
                         </div>
+                        <AdSlot slot="schedule-result" />
+
+
                     </div>
                 </TabsContent>
             </Tabs>

@@ -6,7 +6,10 @@
   "Navigation": {
     "compliance": "Medication Compliance",
     "schedule": "Visit Window Schedule",
-    "calculators": "Clinical Calculators"
+    "calculators": "Clinical Calculators",
+    "about": "About Us",
+    "privacy": "Privacy Policy",
+    "guides": "User Guides"
   },
   "Common": {
     "language": "Language",
@@ -99,5 +102,68 @@
     "footerDesc": "Users from clinical sites worldwide are joining us.",
     "footerCallToAction": "If there are features you want to add or improvements you'd like to suggest, please feel free to let us know. We build quickly!",
     "buttonLabel": "Suggest a Feature"
-  }
+  },
+  "About": {
+    "title": "About Clinical ToolBox",
+    "metaTitle": "About Us | Clinical ToolBox",
+    "metaDesc": "Learn about our mission to provide high-precision tools for clinical research professionals.",
+    "intro": "Why We Built Clinical ToolBox",
+    "p1": "As clinical research professionals, we spend a significant portion of our time doing repetitive manual calculations. Clinical ToolBox was built to eliminate these tedious tasks and reduce human error.",
+    "p2": "Our goal is to provide a central place where CRAs and CRCs can quickly calculate adherence, generate visit schedules, and perform metric conversions with confidence.",
+    "p3": "Every tool here is designed for speed and accuracy, allowing you to focus more on patient care and data quality rather than spreadsheets.",
+    "mission": "Our Mission",
+    "missionText": "To be the most efficient digital companion for every CRA and CRC in the field.",
+    "whyUs": "Benefits",
+    "reason1Title": "Built for Research",
+    "reason1Desc": "Calculators tailored specifically for protocol requirements like visit windows and missed doses.",
+    "reason2Title": "Privacy First",
+    "reason2Desc": "No patient data is ever stored on our servers. Everything happens in your browser.",
+    "reason3Title": "Reporting Ready",
+    "reason3Desc": "Export everything to PDF or Excel for your monitoring reports or site files."
+  },
+  "Privacy": {
+    "title": "Privacy Policy",
+    "metaTitle": "Privacy Policy | Clinical ToolBox",
+    "metaDesc": "Review our privacy policy and data handling practices.",
+    "introduction": "We value your privacy. This policy explains how we handle your information.",
+    "cookiesTitle": "Cookies",
+    "cookiesText": "We use cookies to improve your user experience and for Google AdSense functionality.",
+    "adsenseTitle": "Advertising",
+    "adsenseText1": "Google AdSense uses cookies to serve relevant ads based on your site visits.",
+    "adsenseText2": "You can opt-out of personalized ads in your Google settings.",
+    "dataHandlingTitle": "Data Handling",
+    "dataHandlingText": "We do not store the numbers you input into the calculators. All calculations are performed on your device.",
+    "complianceTitle": "Compliance",
+    "complianceText": "We aim to follow GDPR and industry best practices for data privacy."
+  },
+  "Guides": {
+    "title": "How to Use Clinical ToolBox",
+    "metaTitle": "User Guides | Clinical ToolBox",
+    "metaDesc": "Learn how to use our medication compliance, visit schedule, and clinical calculators efficiently.",
+    "complianceGuide": {
+      "title": "How to Calculate Medication Compliance",
+      "intro": "Accurately calculating compliance is essential for drug accountability. Our tool handles the math for you.",
+      "section1Title": "Step 1: Basic Input",
+      "section1Text": "Enter the Start Date and the Return Date. Then enter the Dispensed Quantity and Returned Quantity. The tool immediately calculates the estimated compliance based on the 'Daily Dose' you provide.",
+      "section2Title": "Step 2: Handle Adjustments",
+      "section2Text": "If a patient lost a bottle or missed doses due to side effects, use the 'Adjustments' tab. You can choose whether missed doses should be excused from the calculation or not with a single toggle.",
+      "section3Title": "The Benefit",
+      "section3Text": "Stop using manual spreadsheets. Get a clean, formatted result that you can export to PDF and attach to your monitoring report instantly."
+    },
+    "scheduleGuide": {
+      "title": "How to Generate a Visit Schedule",
+      "intro": "Quit counting days on a calendar. Generate a full, professional schedule in seconds.",
+      "section1Title": "Setup Your Visits",
+      "section1Text": "Simply enter 'Visit 1' (Baseline) date. Then add your subsequent visits (V2, V3, etc.) by specifying how many days after V1 they should occur.",
+      "section2Title": "Defining Windows",
+      "section2Text": "Enter the protocol-allowed window (e.g., ±3 days). The generator will automatically create a table showing the target date and the full acceptable range for every visit.",
+      "section3Title": "The Benefit",
+      "section3Text": "Export the table to Excel and share it with your sites. This helps prevent 'Out of Window' deviations before they happen."
+    },
+    "siteManagement": {
+      "title": "Using the Swiss-Army Clinical Calculator",
+      "text": "Our multi-calculator tab features essential tools like renal function (eGFR/CrCl), BMI/BSA, and IV drip rates. Simply select the tab you need, enter the values, and get results instantly. It's designed to be your quick-reference companion during site visits."
+    }
+  },
+  "CalculatorSEO": {}
 }

@@ -1,11 +1,13 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { Button } from '@/components/ui/button';
 import { MessageSquarePlus } from 'lucide-react';
 
 export default function Footer() {
     const t = useTranslations('Footer');
+    const tNav = useTranslations('Navigation');
     const ft = useTranslations('Feedback');
 
     const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdqnh79vrEYbU1Ymvvdfp4wOpVkcz8k4NgX-KG7fvu4ry2vzg/viewform?usp=header";
@@ -33,11 +35,16 @@ export default function Footer() {
                 </div>
 
                 <div className="text-center">
+                    <div className="flex justify-center gap-8 mb-8 text-sm font-medium">
+                        <Link href="/about" className="hover:text-primary transition-colors">{tNav('about')}</Link>
+                        <Link href="/privacy" className="hover:text-primary transition-colors">{tNav('privacy')}</Link>
+                        <Link href="/guides" className="hover:text-primary transition-colors">{tNav('guides')}</Link>
+                    </div>
                     <p className="text-sm text-muted-foreground max-w-3xl mx-auto opacity-70">
                         {t('disclaimer')}
                     </p>
                     <p className="text-xs text-muted-foreground/40 mt-6 font-mono">
-                        v1.1.0 (BETA)
+                        v1.2.0 (ADS & SEO)
                     </p>
                 </div>
             </div>

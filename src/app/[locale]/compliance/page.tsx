@@ -16,6 +16,7 @@ import { KpiCard } from '@/components/common/KpiCard';
 import { FlagList, Flag } from '@/components/common/FlagList';
 import { ExportButtons } from '@/components/common/ExportButtons';
 import { exportToCSV, exportToExcel, exportToPDF } from '@/lib/exportUtils';
+import AdSlot from '@/components/ads/AdSlot';
 
 const complianceSchema = z.object({
     startDate: z.string().min(1, 'Required'),
@@ -282,6 +283,10 @@ export default function CompliancePage() {
                                 <p>Compliance % = ({values.applyMissed ? 'Adjusted' : 'Estimated'} / Expected) * 100 = {results.compliance.toFixed(2)}%</p>
                             </CardContent>
                         </Card>
+
+                        <AdSlot slot="compliance-result" />
+
+
 
                         <div className="flex justify-between pt-4 border-t mt-8">
                             <Button variant="outline" onClick={() => setActiveTab('adjust')}>{tCommon('prev')}</Button>
