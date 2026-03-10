@@ -108,62 +108,75 @@
     "metaTitle": "About Us | Clinical ToolBox",
     "metaDesc": "Learn about our mission to provide high-precision tools for clinical research professionals.",
     "intro": "Why We Built Clinical ToolBox",
-    "p1": "As clinical research professionals, we spend a significant portion of our time doing repetitive manual calculations. Clinical ToolBox was built to eliminate these tedious tasks and reduce human error.",
-    "p2": "Our goal is to provide a central place where CRAs and CRCs can quickly calculate adherence, generate visit schedules, and perform metric conversions with confidence.",
-    "p3": "Every tool here is designed for speed and accuracy, allowing you to focus more on patient care and data quality rather than spreadsheets.",
+    "p1": "As clinical research professionals, we spend a significant portion of our time doing repetitive manual calculations. Whether it's medication compliance for drug accountability or visit window management to avoid protocol deviations, even a small error can compromise data integrity. Clinical ToolBox was built to eliminate these tedious tasks and reduce human error.",
+    "p2": "Our goal is to provide a central place where CRAs and CRCs can quickly calculate adherence, generate visit schedules, and perform metric conversions with confidence. Our tools follow industry-standard formulas and are designed with the specific needs of the clinical research community in mind.",
+    "p3": "Every tool here is designed for speed and accuracy, allowing you to focus more on patient care and data quality rather than spreadsheets. We believe that by automating these routine metrics, we can contribute to safer and more efficient clinical trials worldwide.",
     "mission": "Our Mission",
     "missionText": "To be the most efficient digital companion for every CRA and CRC in the field.",
     "whyUs": "Benefits",
-    "reason1Title": "Built for Research",
-    "reason1Desc": "Calculators tailored specifically for protocol requirements like visit windows and missed doses.",
-    "reason2Title": "Privacy First",
-    "reason2Desc": "No patient data is ever stored on our servers. Everything happens in your browser.",
-    "reason3Title": "Reporting Ready",
-    "reason3Desc": "Export everything to PDF or Excel for your monitoring reports or site files."
+    "reason1Title": "Built for Research Logic",
+    "reason1Desc": "Unlike generic calculators, our tools account for protocol-specific variables like visit window ranges and missed dose adjustments.",
+    "reason2Title": "Privacy & Data Sovereignty",
+    "reason2Desc": "No patient-identifiable data is ever stored on our servers. All calculations happen locally in your browser, ensuring maximum data security.",
+    "reason3Title": "Reporting Ready Results",
+    "reason3Desc": "Export everything to PDF or Excel to include them in your monitoring reports or site source documents immediately."
   },
   "Privacy": {
     "title": "Privacy Policy",
     "metaTitle": "Privacy Policy | Clinical ToolBox",
     "metaDesc": "Review our privacy policy and data handling practices.",
-    "introduction": "We value your privacy. This policy explains how we handle your information.",
-    "cookiesTitle": "Cookies",
-    "cookiesText": "We use cookies to improve your user experience and for Google AdSense functionality.",
-    "adsenseTitle": "Advertising",
-    "adsenseText1": "Google AdSense uses cookies to serve relevant ads based on your site visits.",
-    "adsenseText2": "You can opt-out of personalized ads in your Google settings.",
-    "dataHandlingTitle": "Data Handling",
-    "dataHandlingText": "We do not store the numbers you input into the calculators. All calculations are performed on your device.",
-    "complianceTitle": "Compliance",
-    "complianceText": "We aim to follow GDPR and industry best practices for data privacy."
+    "introduction": "We value your privacy highly. This policy defines how we handle information to ensure transparency for all users of Clinical ToolBox.",
+    "cookiesTitle": "Cookies and Tracking",
+    "cookiesText": "We use persistent and session cookies to improve your user experience and for core Google AdSense functionalities. This data is not used for personal identification.",
+    "adsenseTitle": "Advertising Disclosure",
+    "adsenseText1": "Google AdSense uses cookies to serve relevant advertisements based on your visits to this and other websites.",
+    "adsenseText2": "You can opt-out of personalized advertising at any time by visiting your Google Ad Settings or adjusting browser cookie preferences.",
+    "dataHandlingTitle": "High-Privacy Logic",
+    "dataHandlingText": "We do not store the numerical values you input into our calculators on our servers. All calculations are performed on the client-side (on your device).",
+    "complianceTitle": "Regulatory Standards",
+    "complianceText": "We strive to comply with GDPR, CCPA, and industry best practices for clinical data privacy and transparency."
   },
   "Guides": {
     "title": "How to Use Clinical ToolBox",
     "metaTitle": "User Guides | Clinical ToolBox",
     "metaDesc": "Learn how to use our medication compliance, visit schedule, and clinical calculators efficiently.",
     "complianceGuide": {
-      "title": "How to Calculate Medication Compliance",
-      "intro": "Accurately calculating compliance is essential for drug accountability. Our tool handles the math for you.",
-      "section1Title": "Step 1: Basic Input",
-      "section1Text": "Enter the Start Date and the Return Date. Then enter the Dispensed Quantity and Returned Quantity. The tool immediately calculates the estimated compliance based on the 'Daily Dose' you provide.",
-      "section2Title": "Step 2: Handle Adjustments",
-      "section2Text": "If a patient lost a bottle or missed doses due to side effects, use the 'Adjustments' tab. You can choose whether missed doses should be excused from the calculation or not with a single toggle.",
-      "section3Title": "The Benefit",
-      "section3Text": "Stop using manual spreadsheets. Get a clean, formatted result that you can export to PDF and attach to your monitoring report instantly."
+      "title": "1. Mastering Medication Compliance Calculations",
+      "intro": "Accurately calculating compliance is essential for reliable drug accountability. Our tool automates the math so you can focus on the source data.",
+      "section1Title": "Initial Data Entry",
+      "section1Text": "Enter the Start Date and the Return Date first. Then input the Dispensed Quantity and Returned Quantity. Once you set the 'Daily Dose', the tool immediately calculates the estimated compliance. This prevents basic manual errors commonly found in manual counting.",
+      "section2Title": "Handling Real-World Adjustments",
+      "section2Text": "If a patient lost a bottle or missed doses due to side effects, use the 'Adjustments' tab. You can toggle whether missed doses should be penalized or excused according to your specific protocol requirements. This ensures the calculation reflects the actual therapeutic intent.",
+      "section3Title": "The Actionable Benefit",
+      "section3Text": "Quit using fragile manual spreadsheets. Export the clean result to PDF and attach it to your monitoring report or Follow-up Letter for clear, professional site communication."
     },
     "scheduleGuide": {
-      "title": "How to Generate a Visit Schedule",
-      "intro": "Quit counting days on a calendar. Generate a full, professional schedule in seconds.",
-      "section1Title": "Setup Your Visits",
-      "section1Text": "Simply enter 'Visit 1' (Baseline) date. Then add your subsequent visits (V2, V3, etc.) by specifying how many days after V1 they should occur.",
-      "section2Title": "Defining Windows",
-      "section2Text": "Enter the protocol-allowed window (e.g., ±3 days). The generator will automatically create a table showing the target date and the full acceptable range for every visit.",
-      "section3Title": "The Benefit",
-      "section3Text": "Export the table to Excel and share it with your sites. This helps prevent 'Out of Window' deviations before they happen."
+      "title": "2. Streamlining Visit Window Generation",
+      "intro": "Quit counting days on a physical calendar. Generate a full, professional schedule for your site in seconds.",
+      "section1Title": "Defining Your Project Timeline",
+      "section1Text": "Enter the Visit 1 (Baseline) date. Then define your subsequent visits (V2, V3, etc.) by specifying the target day offset from V1. The logic handles leap years and different month lengths automatically.",
+      "section2Title": "Setting Acceptable Margins",
+      "section2Text": "Enter the protocol-allowed window (e.g., ±3 days). The generator creates a clear table showing the target date and the full acceptable range. This is the best way to visualize and prevent upcoming Out-of-Window deviations.",
+      "section3Title": "Supporting Your Research Sites",
+      "section3Text": "Export the schedule to Excel and share it with your Study Coordinators (CRCs). This helps them book subject appointments correctly from the beginning of the study."
     },
     "siteManagement": {
-      "title": "Using the Swiss-Army Clinical Calculator",
-      "text": "Our multi-calculator tab features essential tools like renal function (eGFR/CrCl), BMI/BSA, and IV drip rates. Simply select the tab you need, enter the values, and get results instantly. It's designed to be your quick-reference companion during site visits."
+      "title": "3. Using the Clinical 'Swiss-Army' Calculators",
+      "text": "Our multi-tabbed calculator features essential metrics like renal function (eGFR/CrCl), BMI/BSA, and IV drip rates. Simply select the tab you need, enter the source values, and get results instantly. It's designed to be your quick-reference companion during on-site monitoring visits when eligibility or dose decisions must be made quickly."
     }
   },
-  "CalculatorSEO": {}
+  "CalculatorInfo": {
+    "compliance": {
+      "title": "Why Medication Compliance Tracking Matters",
+      "text": "In clinical trials, compliance measures how closely subjects follow the investigator's instructions and protocol requirements. Accurate tracking is critical for establishing the dose-response relationship of a new drug."
+    },
+    "schedule": {
+      "title": "Ensuring Protocol Visit Adherence",
+      "text": "Visit windows represent the margin of error allowed by a protocol. Proactive scheduling using target dates is the most effective strategy for maintaining high-quality data and avoiding major protocol deviations."
+    },
+    "clinical": {
+      "title": "Supporting Daily Clinical METRICS",
+      "text": "Metrics like eGFR, BMI, and BSA are essential for determining subject eligibility and drug dose calculations. Using validated formulas ensures consistent results across different monitoring sites."
+    }
+  }
 }

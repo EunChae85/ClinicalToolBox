@@ -348,6 +348,7 @@ function VitalsCalculator() {
 
 export default function CalculatorsPage() {
     const t = useTranslations('Calculators');
+    const tInfo = useTranslations('CalculatorInfo');
     const tCommon = useTranslations('Common');
     const [activeTab, setActiveTab] = useState('units');
 
@@ -434,7 +435,13 @@ export default function CalculatorsPage() {
 
             <AdSlot slot="clinical-bottom" />
 
-
+            {/* SEO/AdSense Content Support Section */}
+            <section className="mt-16 bg-muted/20 p-8 rounded-2xl border border-muted-foreground/10">
+                <h2 className="text-xl font-bold mb-3">{tInfo('clinical.title')}</h2>
+                <p className="text-muted-foreground leading-relaxed">
+                    {tInfo('clinical.text')}
+                </p>
+            </section>
         </div>
     );
 }

@@ -34,6 +34,7 @@ type ComplianceFormValues = z.infer<typeof complianceSchema>;
 export default function CompliancePage() {
     const t = useTranslations('Compliance');
     const tCommon = useTranslations('Common');
+    const tInfo = useTranslations('CalculatorInfo');
 
     const [activeTab, setActiveTab] = useState('input');
     const [flags, setFlags] = useState<Flag[]>([]);
@@ -198,28 +199,30 @@ export default function CompliancePage() {
                         <CardHeader><CardTitle>{t('timeline')} & {t('dispensing')}</CardTitle></CardHeader>
                         <CardContent className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div className="space-y-3">
-                                    <Label>{t('startDate')}</Label>
-                                    <Input type="date" {...form.register('startDate')} />
+                                <div className="space-y-2">
+                                    <Label htmlFor="startDate">{t('startDate')}</Label>
+                                    <Input id="startDate" type="date" {...form.register('startDate')} />
                                 </div>
-                                <div className="space-y-3">
-                                    <Label>{t('endDate')}</Label>
-                                    <Input type="date" {...form.register('endDate')} />
-                                </div>
-                                <div className="space-y-3">
-                                    <Label>{t('dispensedQty')}</Label>
-                                    <Input type="number" step="0.5" {...form.register('dispensedQty', { valueAsNumber: true })} />
-                                </div>
-                                <div className="space-y-3">
-                                    <Label>{t('returnedQty')}</Label>
-                                    <Input type="number" step="0.5" {...form.register('returnedQty', { valueAsNumber: true })} />
-                                </div>
-                                <div className="space-y-3">
-                                    <Label>{t('dailyDose')}</Label>
-                                    <Input type="number" step="0.1" {...form.register('dailyDose', { valueAsNumber: true })} />
+                                <div className="space-y-2">
+                                    <Label htmlFor="endDate">{t('endDate')}</Label>
+                                    <Input id="endDate" type="date" {...form.register('endDate')} />
                                 </div>
                             </div>
-                            <div className="flex justify-end pt-4">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+                                <div className="space-y-2">
+                                    <Label htmlFor="dailyDose">{t('dailyDose')}</Label>
+                                    <Input id="dailyDose" type="number" step="any" {...form.register('dailyDose', { valueAsNumber: true })} />
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="dispensedQty">{t('dispensedQty')}</Label>
+                                    <Input id="dispensedQty" type="number" step="any" {...form.register('dispensedQty', { valueAsNumber: true })} />
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="returnedQty">{t('returnedQty')}</Label>
+                                    <Input id="returnedQty" type="number" step="any" {...form.register('returnedQty', { valueAsNumber: true })} />
+                                </div>
+                            </div>
+                            <div className="flex justify-end pt-6 border-t">
                                 <Button onClick={() => setActiveTab('adjust')}>{tCommon('next')}</Button>
                             </div>
                         </CardContent>
@@ -230,21 +233,26 @@ export default function CompliancePage() {
                     <Card>
                         <CardHeader><CardTitle>{t('adjustments')}</CardTitle></CardHeader>
                         <CardContent className="space-y-6">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div className="space-y-3">
-                                    <Label>{t('lostDamaged')}</Label>
-                                    <Input type="number" step="0.5" {...form.register('lostDamaged', { valueAsNumber: true })} />
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div className="space-y-2">
+                                    <Label htmlFor="lostDamaged">{t('lostDamaged')}</Label>
+                                    <Input id="lostDamaged" type="number" step="any" {...form.register('lostDamaged', { valueAsNumber: true })} />
                                 </div>
-                                <div className="space-y-3">
-                                    <Label>{t('missedDoses')}</Label>
-                                    <Input type="number" step="0.5" {...form.register('missedDoses', { valueAsNumber: true })} />
-                                </div>
-                                <div className="space-y-2 flex items-center gap-2 mt-8">
-                                    <input type="checkbox" id="applyMissed" {...form.register('applyMissed')} className="w-4 h-4" />
-                                    <Label htmlFor="applyMissed">{t('applyMissed')}</Label>
+                                <div className="space-y-2">
+                                    <Label htmlFor="missedDoses">{t('missedDoses')}</Label>
+                                    <Input id="missedDoses" type="number" step="any" {...form.register('missedDoses', { valueAsNumber: true })} />
                                 </div>
                             </div>
-                            <div className="flex justify-between pt-4">
+                            <div className="flex items-center space-x-2 pt-4 bg-primary/5 p-4 rounded-lg">
+                                <input
+                                    type="checkbox"
+                                    id="applyMissed"
+                                    className="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary"
+                                    {...form.register('applyMissed')}
+                                />
+                                <Label htmlFor="applyMissed" className="font-medium cursor-pointer">{t('applyMissed')}</Label>
+                            </div>
+                            <div className="flex justify-between pt-6 border-t">
                                 <Button variant="outline" onClick={() => setActiveTab('input')}>{tCommon('prev')}</Button>
                                 <Button onClick={() => setActiveTab('result')}>{tCommon('next')}</Button>
                             </div>
@@ -286,8 +294,6 @@ export default function CompliancePage() {
 
                         <AdSlot slot="compliance-result" />
 
-
-
                         <div className="flex justify-between pt-4 border-t mt-8">
                             <Button variant="outline" onClick={() => setActiveTab('adjust')}>{tCommon('prev')}</Button>
                             <ExportButtons
@@ -296,6 +302,14 @@ export default function CompliancePage() {
                                 onExportCSV={handleExportCSV}
                             />
                         </div>
+
+                        {/* SEO/AdSense Content Support Section */}
+                        <section className="mt-16 bg-muted/20 p-8 rounded-2xl border border-muted-foreground/10">
+                            <h2 className="text-xl font-bold mb-3">{tInfo('compliance.title')}</h2>
+                            <p className="text-muted-foreground leading-relaxed">
+                                {tInfo('compliance.text')}
+                            </p>
+                        </section>
                     </div>
                 </TabsContent>
             </Tabs>

@@ -35,6 +35,7 @@ type ScheduleFormValues = z.infer<typeof scheduleSchema>;
 export default function SchedulePage() {
     const t = useTranslations('Schedule');
     const tCommon = useTranslations('Common');
+    const tInfo = useTranslations('CalculatorInfo');
 
     const [activeTab, setActiveTab] = useState('setup');
     const [flags, setFlags] = useState<Flag[]>([]);
@@ -266,7 +267,13 @@ export default function SchedulePage() {
                         </div>
                         <AdSlot slot="schedule-result" />
 
-
+                        {/* SEO/AdSense Content Support Section */}
+                        <section className="mt-16 bg-muted/20 p-8 rounded-2xl border border-muted-foreground/10">
+                            <h2 className="text-xl font-bold mb-3">{tInfo('schedule.title')}</h2>
+                            <p className="text-muted-foreground leading-relaxed">
+                                {tInfo('schedule.text')}
+                            </p>
+                        </section>
                     </div>
                 </TabsContent>
             </Tabs>
