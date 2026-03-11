@@ -44,7 +44,7 @@ export default function Footer() {
                         {t('disclaimer')}
                     </p>
                     <p className="text-xs text-muted-foreground/40 mt-6 font-mono">
-                        v1.2.0 (ADS & SEO)
+                        v1.3.0 (UI & ANIMATIONS)
                     </p>
                 </div>
             </div>
