@@ -33,6 +33,8 @@ export default function AboutPage() {
                     <p className="text-lg leading-relaxed">{t('p1')}</p>
                     <p className="text-lg leading-relaxed">{t('p2')}</p>
                     <p className="text-lg leading-relaxed">{t('p3')}</p>
+                    <p className="text-lg leading-relaxed">{t('p4')}</p>
+                    <p className="text-lg leading-relaxed">{t('p5')}</p>
                 </section>
 
                 <section className="bg-primary/5 rounded-3xl p-8 md:p-12 border border-primary/10">

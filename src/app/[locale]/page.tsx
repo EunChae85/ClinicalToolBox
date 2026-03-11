@@ -1,46 +1,168 @@
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
+import { Metadata } from 'next';
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+    const t = await getTranslations({ locale, namespace: 'Calculators' });
+    return {
+        title: `${t('title')} | Clinical ToolBox`,
+        description: t('desc'),
+    };
+}
 
 export default function HomePage() {
-  const t = useTranslations('Index');
-  return (
-    <div className="flex flex-col min-h-[calc(100vh-4rem)] bg-slate-50">
-      <main className="flex-grow flex flex-col items-center justify-center p-8 text-center space-y-8">
-        <div className="space-y-6 max-w-4xl">
-          <h1 className="text-6xl font-extrabold tracking-tight text-slate-900 mb-8 animate-fade-in-up" style={{ animationDelay: '0s' }}>
-            {t('title')}
-          </h1>
-          <div className="space-y-3">
-            {t('description').split('\n').map((line, i) => (
-              <p
-                key={i}
-                className="text-xl md:text-2xl text-slate-600 font-medium opacity-0 animate-fade-in-up"
-                style={{ animationDelay: `${(i + 1) * 0.4}s` }}
-              >
-                {line}
-              </p>
-            ))}
-          </div>
-        </div>
+    const tTools = useTranslations('Tools');
+    const tHub = useTranslations('CalculatorsHub');
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl mt-12">
-          <Link href="/compliance" className="group p-8 bg-white border border-slate-200 rounded-xl hover:border-slate-400 hover:shadow-md transition-all flex flex-col items-center space-y-4 text-slate-800">
-            <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-xl group-hover:bg-blue-100 transition-colors">💊</div>
-            <h2 className="text-xl font-semibold">Medication Compliance</h2>
-            <p className="text-sm text-slate-500 text-center leading-relaxed">Calculate compliance percentages based on dispensed, returned, and lost medications.</p>
-          </Link>
-          <Link href="/schedule" className="group p-8 bg-white border border-slate-200 rounded-xl hover:border-slate-400 hover:shadow-md transition-all flex flex-col items-center space-y-4 text-slate-800">
-            <div className="w-12 h-12 bg-teal-50 text-teal-600 rounded-full flex items-center justify-center text-xl group-hover:bg-teal-100 transition-colors">🗓️</div>
-            <h2 className="text-xl font-semibold">Visit Schedule Generator</h2>
-            <p className="text-sm text-slate-500 text-center leading-relaxed">Generate protocol-specific visit windows and acceptable target dates.</p>
-          </Link>
-          <Link href="/calculators" className="group p-8 bg-white border border-slate-200 rounded-xl hover:border-slate-400 hover:shadow-md transition-all flex flex-col items-center space-y-4 text-slate-800">
-            <div className="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center text-xl group-hover:bg-indigo-100 transition-colors">🧮</div>
-            <h2 className="text-xl font-semibold">Clinical Calculators</h2>
-            <p className="text-sm text-slate-500 text-center leading-relaxed">Convert units, calculate BMI, BSA, eGFR, and IV drop rates.</p>
-          </Link>
+    return (
+        <div className="container mx-auto px-4 py-16 max-w-7xl">
+            {/* Hero Section */}
+            <div className="mb-20 text-center relative animate-fade-in">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-blue-500/10 blur-3xl rounded-full -z-10"></div>
+                <h1 className="text-5xl md:text-6xl font-black tracking-tighter mb-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-slate-800 bg-clip-text text-transparent animate-fade-in-up">
+                    {tHub('heroTitle')}
+                </h1>
+                <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed whitespace-pre-line opacity-0 animate-fade-in-up [animation-delay:200ms]">
+                    {tHub('heroDesc')}
+                </p>
+                <div className="mt-8 flex justify-center gap-3 opacity-0 animate-fade-in-up [animation-delay:400ms]">
+                    <span className="px-4 py-1.5 bg-blue-50 text-blue-600 text-xs font-bold rounded-full border border-blue-100 flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-pulse"></div>
+                        {tHub('heroBadge')}
+                    </span>
+                    <span className="px-4 py-1.5 bg-slate-50 text-slate-600 text-xs font-bold rounded-full border border-slate-100 italic">
+                        {tHub('heroVerified')}
+                    </span>
+                </div>
+            </div>
+
+            <div className="space-y-24">
+                {/* Clinical Section */}
+                <div id="clinical" className="opacity-0 animate-fade-in-up [animation-delay:600ms]">
+                    <div className="flex items-center gap-4 mb-10">
+                        <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-2xl shadow-lg shadow-blue-200">🚀</div>
+                        <div>
+                            <h2 className="text-2xl font-black text-slate-800 tracking-tight">{tHub('sectionOperations')}</h2>
+                            <p className="text-sm text-slate-400 font-medium">{tHub('sectionOperationsDesc')}</p>
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <Link key="schedule" href="/schedule" className="group p-6 bg-white border border-slate-200 rounded-3xl hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-100 transition-all flex flex-col items-start space-y-4 text-slate-800 text-left relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-24 h-24 bg-slate-50 rounded-bl-full -z-10 opacity-50 transition-transform group-hover:scale-110"></div>
+                            <div className="flex w-full justify-between items-start">
+                                <div className="w-12 h-12 bg-slate-100 text-slate-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all transform group-hover:rotate-6">🗓️</div>
+                                <div className="flex gap-1">
+                                    <span className="px-2 py-0.5 bg-red-50 text-red-600 text-[10px] font-black rounded-md border border-red-100">PDF</span>
+                                    <span className="px-2 py-0.5 bg-emerald-50 text-emerald-600 text-[10px] font-black rounded-md border border-emerald-100">EXCEL</span>
+                                    <span className="px-2 py-0.5 bg-blue-50 text-blue-600 text-[10px] font-black rounded-md border border-blue-100">CSV</span>
+                                </div>
+                            </div>
+                            <div className="z-10">
+                                <h3 className="text-lg font-bold group-hover:text-blue-600 transition-colors">{tTools('schedule_title')}</h3>
+                                <p className="text-xs text-slate-400 mt-2 leading-relaxed">{tTools('schedule_subtitle')}</p>
+                            </div>
+                        </Link>
+                        
+                        {[
+                            { id: 'visit-window', icon: '📅' },
+                            { id: 'enrollment-rate', icon: '📈' },
+                            { id: 'study-duration', icon: '⏳' },
+                            { id: 'dropout-rate', icon: '📉' },
+                            { id: 'screening-failure', icon: '❌' },
+                            { id: 'protocol-deviation', icon: '⚠️' },
+                            { id: 'randomization', icon: '🎲' }
+                        ].map(tool => (
+                            <Link key={tool.id} href={`/calculators/${tool.id}`} className="group p-6 bg-white border border-slate-200 rounded-3xl hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-100 transition-all flex flex-col items-start space-y-4 text-slate-800 text-left relative overflow-hidden">
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50/50 rounded-bl-full -z-10 opacity-50 transition-transform group-hover:scale-110"></div>
+                                <div className="flex w-full justify-between items-start pt-1">
+                                    <div className="w-12 h-12 bg-slate-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all transform group-hover:rotate-6">{tool.icon}</div>
+                                </div>
+                                <div className="z-10">
+                                    <h3 className="text-lg font-bold group-hover:text-blue-600 transition-colors">{tTools(`${tool.id}_title`)}</h3>
+                                    <p className="text-xs text-slate-400 mt-2 leading-relaxed">{tTools(`${tool.id}_subtitle`)}</p>
+                                </div>
+                            </Link>
+                        ))}
+
+                        <Link key="compliance" href="/compliance" className="group p-6 bg-white border border-slate-200 rounded-3xl hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-100 transition-all flex flex-col items-start space-y-4 text-slate-800 text-left relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-24 h-24 bg-slate-50 rounded-bl-full -z-10 opacity-50 transition-transform group-hover:scale-110"></div>
+                            <div className="flex w-full justify-between items-start pb-1">
+                                <div className="w-12 h-12 bg-slate-100 text-slate-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all transform group-hover:rotate-6">💊</div>
+                                <div className="flex gap-1">
+                                    <span className="px-2 py-0.5 bg-red-50 text-red-600 text-[10px] font-black rounded-md border border-red-100">PDF</span>
+                                    <span className="px-2 py-0.5 bg-emerald-50 text-emerald-600 text-[10px] font-black rounded-md border border-emerald-100">EXCEL</span>
+                                    <span className="px-2 py-0.5 bg-blue-50 text-blue-600 text-[10px] font-black rounded-md border border-blue-100">CSV</span>
+                                </div>
+                            </div>
+                            <div className="z-10">
+                                <h3 className="text-lg font-bold group-hover:text-blue-600 transition-colors">{tTools('compliance_title')}</h3>
+                                <p className="text-xs text-slate-400 mt-2 leading-relaxed">{tTools('compliance_subtitle')}</p>
+                            </div>
+                        </Link>
+                    </div>
+                </div>
+
+                {/* Medical Section */}
+                <div id="medical" className="opacity-0 animate-fade-in-up [animation-delay:800ms]">
+                    <div className="flex items-center gap-4 mb-10">
+                        <div className="w-12 h-12 bg-emerald-600 rounded-2xl flex items-center justify-center text-2xl shadow-lg shadow-emerald-200">🩺</div>
+                        <div>
+                            <h2 className="text-2xl font-black text-slate-800 tracking-tight">{tHub('sectionMedical')}</h2>
+                            <p className="text-sm text-slate-400 font-medium">{tHub('sectionMedicalDesc')}</p>
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[
+                            { id: 'bmi', icon: '⚖️' },
+                            { id: 'bsa', icon: '🧍' },
+                            { id: 'dose', icon: '💊' },
+                            { id: 'egfr', icon: '🔬' },
+                            { id: 'creatinine-clearance', icon: '🩸' },
+                            { id: 'infusion-rate', icon: '💧' },
+                            { id: 'unit-converter', icon: '📏' }
+                        ].map(tool => (
+                            <Link key={tool.id} href={`/calculators/${tool.id}`} className="group p-6 bg-white border border-slate-200 rounded-3xl hover:border-emerald-400 hover:shadow-2xl hover:shadow-emerald-100 transition-all flex flex-col items-start space-y-4 text-slate-800 text-left relative overflow-hidden">
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-50/50 rounded-bl-full -z-10 opacity-50 transition-transform group-hover:scale-110"></div>
+                                <div className="w-12 h-12 bg-slate-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-emerald-600 group-hover:text-white transition-all transform group-hover:rotate-6">{tool.icon}</div>
+                                <div className="z-10">
+                                    <h3 className="text-lg font-bold group-hover:text-emerald-600 transition-colors">{tTools(`${tool.id}_title`)}</h3>
+                                    <p className="text-xs text-slate-400 mt-2 leading-relaxed">{tTools(`${tool.id}_subtitle`)}</p>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Statistical Section */}
+                <div id="statistical" className="opacity-0 animate-fade-in-up [animation-delay:1000ms]">
+                    <div className="flex items-center gap-4 mb-10">
+                        <div className="w-12 h-12 bg-amber-600 rounded-2xl flex items-center justify-center text-2xl shadow-lg shadow-amber-200">📊</div>
+                        <div>
+                            <h2 className="text-2xl font-black text-slate-800 tracking-tight">{tHub('sectionStatistical')}</h2>
+                            <p className="text-sm text-slate-400 font-medium">{tHub('sectionStatisticalDesc')}</p>
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                        {[
+                            { id: 'sample-size', icon: '📉' },
+                            { id: 'confidence-interval', icon: '📈' },
+                            { id: 'odds-ratio', icon: '⚖️' },
+                            { id: 'hazard-ratio', icon: '⏳' },
+                            { id: 'p-value', icon: '📉' }
+                        ].map(tool => (
+                            <Link key={tool.id} href={`/calculators/${tool.id}`} className="group p-6 bg-white border border-slate-200 rounded-3xl hover:border-amber-400 hover:shadow-2xl hover:shadow-amber-100 transition-all flex flex-col items-start space-y-4 text-slate-800 text-left relative overflow-hidden">
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-amber-50/50 rounded-bl-full -z-10 opacity-50 transition-transform group-hover:scale-110"></div>
+                                <div className="w-12 h-12 bg-slate-100 text-amber-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-amber-600 group-hover:text-white transition-all transform group-hover:rotate-6">{tool.icon}</div>
+                                <div className="z-10">
+                                    <h3 className="text-lg font-bold group-hover:text-amber-600 transition-colors">{tTools(`${tool.id}_title`)}</h3>
+                                    <p className="text-xs text-slate-400 mt-2 leading-relaxed">{tTools(`${tool.id}_subtitle`)}</p>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </div>
         </div>
-      </main>
-    </div>
-  );
+    );
 }

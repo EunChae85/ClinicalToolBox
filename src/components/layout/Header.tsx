@@ -24,14 +24,14 @@ export default function Header() {
                     {t('title')}
                 </Link>
                 <nav className="hidden md:flex gap-6">
-                    <Link href="/compliance" className={pathname.startsWith('/compliance') ? "font-semibold text-primary" : "text-muted-foreground hover:text-foreground transition-colors"}>
-                        {tNav('compliance')}
+                    <Link href="/#clinical" className="text-muted-foreground hover:text-foreground transition-colors">
+                        {tNav('clinical')}
                     </Link>
-                    <Link href="/schedule" className={pathname.startsWith('/schedule') ? "font-semibold text-primary" : "text-muted-foreground hover:text-foreground transition-colors"}>
-                        {tNav('schedule')}
+                    <Link href="/#medical" className="text-muted-foreground hover:text-foreground transition-colors">
+                        {tNav('medical')}
                     </Link>
-                    <Link href="/calculators" className={pathname.startsWith('/calculators') ? "font-semibold text-primary" : "text-muted-foreground hover:text-foreground transition-colors"}>
-                        {tNav('calculators')}
+                    <Link href="/#statistical" className="text-muted-foreground hover:text-foreground transition-colors">
+                        {tNav('statistical')}
                     </Link>
                     <Link href="/guides" className={pathname.startsWith('/guides') ? "font-semibold text-primary" : "text-muted-foreground hover:text-foreground transition-colors"}>
                         {tNav('guides')}

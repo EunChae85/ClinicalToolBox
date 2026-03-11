@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://clinical-toolbox.com';
     const locales = ['ko', 'en'];
-    const paths = ['', '/calculators', '/compliance', '/schedule'];
+    const paths = ['', '/compliance', '/schedule'];
 
     const routes = locales.flatMap((locale) =>
         paths.map((path) => ({

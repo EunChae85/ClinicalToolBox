@@ -164,97 +164,97 @@ export default function CompliancePage() {
 
     return (
         <div className="container mx-auto px-4 py-8 max-w-4xl" id="compliance-report">
-            <div className="mb-8">
-                <h1 className="text-3xl font-bold tracking-tight mb-2">{t('title')}</h1>
-                <p className="text-muted-foreground">{t('desc')}</p>
+            <div className="mb-10 text-center">
+                <h1 className="text-3xl font-bold tracking-tight mb-4">{t('title')}</h1>
+                <div className="bg-slate-50 p-6 rounded-xl text-slate-700 text-left leading-relaxed border border-slate-100 shadow-sm">
+                    {t('desc')}
+                </div>
             </div>
 
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-                <TabsList className="grid w-full grid-cols-3 mb-10 h-16 p-1.5 bg-slate-100 rounded-xl max-w-2xl mx-auto overflow-visible">
+                <TabsList className="grid w-full grid-cols-3 mb-10 h-16 p-1.5 bg-slate-100 rounded-2xl max-w-2xl mx-auto overflow-visible shadow-inner">
                     <TabsTrigger
                         value="input"
-                        className="h-full rounded-lg transition-all flex items-center justify-center
-                                   data-[state=active]:bg-white data-[state=active]:shadow-lg data-[state=active]:-translate-y-1.5 data-[state=active]:border data-[state=active]:border-slate-200"
+                        className="h-full rounded-xl transition-all flex items-center justify-center font-bold text-slate-500
+                                   data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-lg data-[state=active]:-translate-y-1.5 data-[state=active]:border data-[state=active]:border-slate-200"
                     >
                         {t('tabInput')}
                     </TabsTrigger>
                     <TabsTrigger
                         value="adjust"
-                        className="h-full rounded-lg transition-all flex items-center justify-center
-                                   data-[state=active]:bg-white data-[state=active]:shadow-lg data-[state=active]:-translate-y-1.5 data-[state=active]:border data-[state=active]:border-slate-200"
+                        className="h-full rounded-xl transition-all flex items-center justify-center font-bold text-slate-500
+                                   data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-lg data-[state=active]:-translate-y-1.5 data-[state=active]:border data-[state=active]:border-slate-200"
                     >
                         {t('tabAdjust')}
                     </TabsTrigger>
                     <TabsTrigger
                         value="result"
-                        className="h-full rounded-lg transition-all flex items-center justify-center
-                                   data-[state=active]:bg-white data-[state=active]:shadow-lg data-[state=active]:-translate-y-1.5 data-[state=active]:border data-[state=active]:border-slate-200"
+                        className="h-full rounded-xl transition-all flex items-center justify-center font-bold text-slate-500
+                                   data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-lg data-[state=active]:-translate-y-1.5 data-[state=active]:border data-[state=active]:border-slate-200"
                     >
                         {t('tabResult')}
                     </TabsTrigger>
                 </TabsList>
 
                 <TabsContent value="input">
-                    <Card>
-                        <CardHeader><CardTitle>{t('timeline')} & {t('dispensing')}</CardTitle></CardHeader>
-                        <CardContent className="space-y-6">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div className="space-y-2">
-                                    <Label htmlFor="startDate">{t('startDate')}</Label>
-                                    <Input id="startDate" type="date" {...form.register('startDate')} />
+                    <Card className="shadow-lg border-none bg-white rounded-3xl overflow-hidden">
+                        <CardContent className="space-y-6 pt-10">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                                <div className="space-y-3">
+                                    <Label htmlFor="startDate" className="font-bold text-slate-700">{t('startDate')}</Label>
+                                    <Input id="startDate" type="date" className="h-12 border-2 border-slate-200 focus:border-blue-500 rounded-xl bg-white text-center font-medium" {...form.register('startDate')} />
                                 </div>
-                                <div className="space-y-2">
-                                    <Label htmlFor="endDate">{t('endDate')}</Label>
-                                    <Input id="endDate" type="date" {...form.register('endDate')} />
+                                <div className="space-y-3">
+                                    <Label htmlFor="endDate" className="font-bold text-slate-700">{t('endDate')}</Label>
+                                    <Input id="endDate" type="date" className="h-12 border-2 border-slate-200 focus:border-blue-500 rounded-xl bg-white text-center font-medium" {...form.register('endDate')} />
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-                                <div className="space-y-2">
-                                    <Label htmlFor="dailyDose">{t('dailyDose')}</Label>
-                                    <Input id="dailyDose" type="number" step="any" {...form.register('dailyDose', { valueAsNumber: true })} />
+                                <div className="space-y-3">
+                                    <Label htmlFor="dailyDose" className="font-bold text-slate-700">{t('dailyDose')}</Label>
+                                    <Input id="dailyDose" type="number" step="any" className="h-12 border-2 border-slate-100 focus:border-blue-500 rounded-xl text-center" {...form.register('dailyDose', { valueAsNumber: true })} />
                                 </div>
-                                <div className="space-y-2">
-                                    <Label htmlFor="dispensedQty">{t('dispensedQty')}</Label>
-                                    <Input id="dispensedQty" type="number" step="any" {...form.register('dispensedQty', { valueAsNumber: true })} />
+                                <div className="space-y-3">
+                                    <Label htmlFor="dispensedQty" className="font-bold text-slate-700">{t('dispensedQty')}</Label>
+                                    <Input id="dispensedQty" type="number" step="any" className="h-12 border-2 border-slate-100 focus:border-blue-500 rounded-xl text-center" {...form.register('dispensedQty', { valueAsNumber: true })} />
                                 </div>
-                                <div className="space-y-2">
-                                    <Label htmlFor="returnedQty">{t('returnedQty')}</Label>
-                                    <Input id="returnedQty" type="number" step="any" {...form.register('returnedQty', { valueAsNumber: true })} />
+                                <div className="space-y-3">
+                                    <Label htmlFor="returnedQty" className="font-bold text-slate-700">{t('returnedQty')}</Label>
+                                    <Input id="returnedQty" type="number" step="any" className="h-12 border-2 border-slate-100 focus:border-blue-500 rounded-xl text-center" {...form.register('returnedQty', { valueAsNumber: true })} />
                                 </div>
                             </div>
-                            <div className="flex justify-end pt-6 border-t">
-                                <Button onClick={() => setActiveTab('adjust')}>{tCommon('next')}</Button>
+                            <div className="flex justify-center pt-8">
+                                <Button className="w-full max-w-sm h-14 text-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-xl transition-all active:scale-[0.98] rounded-2xl" onClick={() => setActiveTab('adjust')}>{tCommon('next')} &gt; {t('tabAdjust')}</Button>
                             </div>
                         </CardContent>
                     </Card>
                 </TabsContent>
 
                 <TabsContent value="adjust">
-                    <Card>
-                        <CardHeader><CardTitle>{t('adjustments')}</CardTitle></CardHeader>
-                        <CardContent className="space-y-6">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div className="space-y-2">
-                                    <Label htmlFor="lostDamaged">{t('lostDamaged')}</Label>
-                                    <Input id="lostDamaged" type="number" step="any" {...form.register('lostDamaged', { valueAsNumber: true })} />
+                    <Card className="shadow-lg border-none bg-white rounded-3xl overflow-hidden">
+                        <CardContent className="space-y-6 pt-10">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-amber-50/50 border border-amber-100 p-6 rounded-2xl">
+                                <div className="space-y-3">
+                                    <Label htmlFor="lostDamaged" className="font-bold text-slate-700">{t('lostDamaged')}</Label>
+                                    <Input id="lostDamaged" type="number" step="any" className="h-12 border-2 border-white focus:border-amber-500 rounded-xl bg-white text-center" {...form.register('lostDamaged', { valueAsNumber: true })} />
                                 </div>
-                                <div className="space-y-2">
-                                    <Label htmlFor="missedDoses">{t('missedDoses')}</Label>
-                                    <Input id="missedDoses" type="number" step="any" {...form.register('missedDoses', { valueAsNumber: true })} />
+                                <div className="space-y-3">
+                                    <Label htmlFor="missedDoses" className="font-bold text-slate-700">{t('missedDoses')}</Label>
+                                    <Input id="missedDoses" type="number" step="any" className="h-12 border-2 border-white focus:border-amber-500 rounded-xl bg-white text-center" {...form.register('missedDoses', { valueAsNumber: true })} />
                                 </div>
                             </div>
-                            <div className="flex items-center space-x-2 pt-4 bg-primary/5 p-4 rounded-lg">
+                            <div className="flex items-center space-x-2 pt-2 bg-slate-50 p-4 rounded-xl border border-slate-100">
                                 <input
                                     type="checkbox"
                                     id="applyMissed"
-                                    className="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary"
+                                    className="w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
                                     {...form.register('applyMissed')}
                                 />
-                                <Label htmlFor="applyMissed" className="font-medium cursor-pointer">{t('applyMissed')}</Label>
+                                <Label htmlFor="applyMissed" className="font-bold cursor-pointer text-slate-700 ml-2">{t('applyMissed')}</Label>
                             </div>
-                            <div className="flex justify-between pt-6 border-t">
-                                <Button variant="outline" onClick={() => setActiveTab('input')}>{tCommon('prev')}</Button>
-                                <Button onClick={() => setActiveTab('result')}>{tCommon('next')}</Button>
+                            <div className="flex justify-between pt-8 border-t border-slate-100 relative max-w-xl mx-auto items-center mt-4">
+                                <Button variant="outline" className="h-12 rounded-xl text-slate-500 font-bold border-2" onClick={() => setActiveTab('input')}>{tCommon('prev')}</Button>
+                                <Button className="h-14 px-8 text-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-xl transition-all active:scale-[0.98] rounded-2xl" onClick={() => setActiveTab('result')}>{tCommon('next')} &gt; {t('tabResult')}</Button>
                             </div>
                         </CardContent>
                     </Card>
@@ -282,8 +282,7 @@ export default function CompliancePage() {
                         <FlagList flags={flags} />
 
                         <Card className="mt-8">
-                            <CardHeader><CardTitle>{t('summary')}</CardTitle></CardHeader>
-                            <CardContent className="text-sm font-mono space-y-2 bg-muted/30 p-4 rounded-md mx-6 mb-6">
+                            <CardContent className="text-sm font-mono space-y-2 bg-muted/30 p-4 rounded-md mx-6 mb-6 mt-6">
                                 <p>Days = (End - Start) + 1 = {results.days}</p>
                                 <p>Expected Taken = Days * Daily Dose = {results.expectedTaken}</p>
                                 <p>Estimated Taken = Dispensed - Returned - Lost = {results.estimatedTaken}</p>
@@ -294,8 +293,8 @@ export default function CompliancePage() {
 
                         <AdSlot slot="compliance-result" />
 
-                        <div className="flex justify-between pt-4 border-t mt-8">
-                            <Button variant="outline" onClick={() => setActiveTab('adjust')}>{tCommon('prev')}</Button>
+                        <div className="flex justify-between pt-4 border-t border-slate-100 mt-8">
+                            <Button variant="outline" className="h-12 rounded-xl text-slate-500 font-bold border-2" onClick={() => setActiveTab('adjust')}>{tCommon('prev')}</Button>
                             <ExportButtons
                                 onExportPDF={handleExportPDF}
                                 onExportExcel={handleExportExcel}

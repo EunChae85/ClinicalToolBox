@@ -155,71 +155,72 @@ export default function SchedulePage() {
     };
 
     return (
-        <div className="container mx-auto px-4 py-8 max-w-5xl" id="schedule-report">
-            <div className="mb-8">
-                <h1 className="text-3xl font-bold tracking-tight mb-2">{t('title')}</h1>
-                <p className="text-muted-foreground">{t('desc')}</p>
+        <div className="container mx-auto px-4 py-8 max-w-4xl" id="schedule-report">
+            <div className="mb-10 text-center">
+                <h1 className="text-3xl font-bold tracking-tight mb-4">{t('title')}</h1>
+                <div className="bg-slate-50 p-6 rounded-xl text-slate-700 text-left leading-relaxed border border-slate-100 shadow-sm">
+                    {t('desc')}
+                </div>
             </div>
 
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-                <TabsList className="grid w-full grid-cols-2 mb-10 h-16 p-1.5 bg-slate-100 rounded-xl max-w-md mx-auto overflow-visible">
+                <TabsList className="grid w-full grid-cols-2 mb-10 h-16 p-1.5 bg-slate-100 rounded-2xl max-w-md mx-auto overflow-visible shadow-inner">
                     <TabsTrigger
                         value="setup"
-                        className="h-full rounded-lg transition-all flex items-center justify-center
-                                   data-[state=active]:bg-white data-[state=active]:shadow-lg data-[state=active]:-translate-y-1.5 data-[state=active]:border data-[state=active]:border-slate-200"
+                        className="h-full rounded-xl transition-all flex items-center justify-center font-bold text-slate-500
+                                   data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-lg data-[state=active]:-translate-y-1.5 data-[state=active]:border data-[state=active]:border-slate-200"
                     >
                         {t('tabSetup')}
                     </TabsTrigger>
                     <TabsTrigger
                         value="generate"
-                        className="h-full rounded-lg transition-all flex items-center justify-center
-                                   data-[state=active]:bg-white data-[state=active]:shadow-lg data-[state=active]:-translate-y-1.5 data-[state=active]:border data-[state=active]:border-slate-200"
+                        className="h-full rounded-xl transition-all flex items-center justify-center font-bold text-slate-500
+                                   data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-lg data-[state=active]:-translate-y-1.5 data-[state=active]:border data-[state=active]:border-slate-200"
                     >
                         {t('tabGenerate')}
                     </TabsTrigger>
                 </TabsList>
 
                 <TabsContent value="setup">
-                    <Card>
-                        <CardHeader><CardTitle>{t('tabSetup')}</CardTitle></CardHeader>
-                        <CardContent className="space-y-6">
-                            <div className="space-y-3 max-w-sm">
-                                <Label>{t('visit1Date')}</Label>
-                                <Input type="date" {...form.register('visit1Date')} />
+                    <Card className="shadow-lg border-none bg-white rounded-3xl overflow-hidden">
+                        <CardContent className="space-y-6 pt-10">
+                            <div className="space-y-3 max-w-sm mx-auto">
+                                <Label className="font-bold text-slate-700">{t('visit1Date')}</Label>
+                                <Input type="date" className="h-12 border-2 border-slate-100 focus:border-blue-500 rounded-xl font-medium text-center" {...form.register('visit1Date')} />
                             </div>
 
                             <div className="space-y-4 pt-4 border-t">
                                 {fields.map((field, index) => (
-                                    <div key={field.id} className="flex gap-4 items-end bg-muted/20 p-4 rounded-lg border">
+                                    <div key={field.id} className="flex gap-4 items-end bg-slate-50 p-6 rounded-2xl border border-slate-100">
                                         <div className="space-y-3 flex-1">
-                                            <Label>{t('visitName')}</Label>
-                                            <Input placeholder="V2" {...form.register(`visits.${index}.name` as const)} />
+                                            <Label className="font-bold text-slate-700">{t('visitName')}</Label>
+                                            <Input placeholder="V2" className="h-12 border-2 border-w border-slate-200 focus:border-blue-500 rounded-xl bg-white" {...form.register(`visits.${index}.name` as const)} />
                                         </div>
                                         <div className="space-y-3 flex-1">
-                                            <Label>{t('targetOffset')}</Label>
-                                            <Input type="number" {...form.register(`visits.${index}.offsetDays` as const, { valueAsNumber: true })} />
+                                            <Label className="font-bold text-slate-700">{t('targetOffset')}</Label>
+                                            <Input type="number" className="h-12 border-2 border-w border-slate-200 focus:border-blue-500 rounded-xl bg-white" {...form.register(`visits.${index}.offsetDays` as const, { valueAsNumber: true })} />
                                         </div>
                                         <div className="space-y-3 flex-1">
-                                            <Label>{t('windowDays')}</Label>
-                                            <Input type="number" {...form.register(`visits.${index}.windowDays` as const, { valueAsNumber: true })} />
+                                            <Label className="font-bold text-slate-700">{t('windowDays')}</Label>
+                                            <Input type="number" className="h-12 border-2 border-w border-slate-200 focus:border-blue-500 rounded-xl bg-white" {...form.register(`visits.${index}.windowDays` as const, { valueAsNumber: true })} />
                                         </div>
-                                        <Button type="button" variant="destructive" size="icon" onClick={() => remove(index)}>
-                                            <Trash2 className="w-4 h-4" />
+                                        <Button type="button" variant="destructive" className="h-12 w-12 rounded-xl" size="icon" onClick={() => remove(index)}>
+                                            <Trash2 className="w-5 h-5" />
                                         </Button>
                                     </div>
                                 ))}
                                 <Button
                                     type="button"
                                     variant="outline"
-                                    className="w-full border-dashed"
+                                    className="w-full h-14 border-2 border-dashed border-slate-300 text-slate-500 hover:text-blue-600 hover:border-blue-400 hover:bg-blue-50 rounded-xl font-bold transition-all text-lg"
                                     onClick={() => append({ name: `V${fields.length + 2}`, offsetDays: (fields.length + 1) * 14, windowDays: 3 })}
                                 >
-                                    <Plus className="w-4 h-4 mr-2" /> {t('addVisit')}
+                                    <Plus className="w-5 h-5 mr-2" /> {t('addVisit')}
                                 </Button>
                             </div>
 
-                            <div className="flex justify-end pt-4">
-                                <Button onClick={() => setActiveTab('generate')}>{tCommon('next')}</Button>
+                            <div className="flex justify-center pt-8">
+                                <Button className="w-full max-w-sm h-14 text-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-xl transition-all active:scale-[0.98] rounded-2xl" onClick={() => setActiveTab('generate')}>{tCommon('next')} &gt; {t('tabGenerate')}</Button>
                             </div>
                         </CardContent>
                     </Card>
@@ -227,7 +228,7 @@ export default function SchedulePage() {
 
                 <TabsContent value="generate">
                     <div className="space-y-6">
-                        <Card>
+                        <Card className="shadow-lg border-none bg-white rounded-3xl overflow-hidden">
                             <CardContent className="p-0">
                                 <Table>
                                     <TableHeader>
@@ -257,8 +258,8 @@ export default function SchedulePage() {
 
                         <FlagList flags={flags} />
 
-                        <div className="flex justify-between pt-4 border-t mt-8">
-                            <Button variant="outline" onClick={() => setActiveTab('setup')}>{tCommon('prev')}</Button>
+                        <div className="flex justify-between pt-4 border-t border-slate-100 mt-8">
+                            <Button variant="outline" className="h-12 rounded-xl border-2 border-slate-200" onClick={() => setActiveTab('setup')}>{tCommon('prev')}</Button>
                             <ExportButtons
                                 onExportPDF={handleExportPDF}
                                 onExportExcel={handleExportExcel}
