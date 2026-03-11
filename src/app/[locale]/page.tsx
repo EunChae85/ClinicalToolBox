@@ -23,10 +23,10 @@ export default function HomePage() {
                 <h1 className="text-5xl md:text-6xl font-black tracking-tighter mb-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-slate-800 bg-clip-text text-transparent animate-fade-in-up">
                     {tHub('heroTitle')}
                 </h1>
-                <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed whitespace-pre-line opacity-0 animate-fade-in-up [animation-delay:200ms]">
+                <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed whitespace-pre-line opacity-0 animate-fade-in-up [animation-delay:300ms]">
                     {tHub('heroDesc')}
                 </p>
-                <div className="mt-8 flex justify-center gap-3 opacity-0 animate-fade-in-up [animation-delay:400ms]">
+                <div className="mt-8 flex justify-center gap-3 opacity-0 animate-fade-in-up [animation-delay:500ms]">
                     <span className="px-4 py-1.5 bg-blue-50 text-blue-600 text-xs font-bold rounded-full border border-blue-100 flex items-center gap-2">
                         <div className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-pulse"></div>
                         {tHub('heroBadge')}
@@ -39,7 +39,7 @@ export default function HomePage() {
 
             <div className="space-y-24">
                 {/* Clinical Section */}
-                <div id="clinical" className="opacity-0 animate-fade-in-up [animation-delay:600ms]">
+                <div id="clinical" className="opacity-0 animate-fade-in-up [animation-delay:800ms]">
                     <div className="flex items-center gap-4 mb-10">
                         <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-2xl shadow-lg shadow-blue-200">🚀</div>
                         <div>
@@ -48,7 +48,7 @@ export default function HomePage() {
                         </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <Link key="schedule" href="/schedule" className="group p-6 bg-white border border-slate-200 rounded-3xl hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-100 transition-all flex flex-col items-start space-y-4 text-slate-800 text-left relative overflow-hidden">
+                        <Link key="schedule" href="/schedule" className="group p-6 bg-white border border-slate-200 rounded-3xl hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-100 transition-all flex flex-col items-start space-y-4 text-slate-800 text-left relative overflow-hidden opacity-0 animate-fade-in-up [animation-delay:900ms]">
                             <div className="absolute top-0 right-0 w-24 h-24 bg-slate-50 rounded-bl-full -z-10 opacity-50 transition-transform group-hover:scale-110"></div>
                             <div className="flex w-full justify-between items-start">
                                 <div className="w-12 h-12 bg-slate-100 text-slate-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all transform group-hover:rotate-6">🗓️</div>
@@ -72,8 +72,8 @@ export default function HomePage() {
                             { id: 'screening-failure', icon: '❌' },
                             { id: 'protocol-deviation', icon: '⚠️' },
                             { id: 'randomization', icon: '🎲' }
-                        ].map(tool => (
-                            <Link key={tool.id} href={`/calculators/${tool.id}`} className="group p-6 bg-white border border-slate-200 rounded-3xl hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-100 transition-all flex flex-col items-start space-y-4 text-slate-800 text-left relative overflow-hidden">
+                        ].map((tool, idx) => (
+                            <Link key={tool.id} href={`/calculators/${tool.id}`} className="group p-6 bg-white border border-slate-200 rounded-3xl hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-100 transition-all flex flex-col items-start space-y-4 text-slate-800 text-left relative overflow-hidden opacity-0 animate-fade-in-up" style={{ animationDelay: `${1000 + (idx * 50)}ms` }}>
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50/50 rounded-bl-full -z-10 opacity-50 transition-transform group-hover:scale-110"></div>
                                 <div className="flex w-full justify-between items-start pt-1">
                                     <div className="w-12 h-12 bg-slate-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all transform group-hover:rotate-6">{tool.icon}</div>
@@ -85,7 +85,7 @@ export default function HomePage() {
                             </Link>
                         ))}
 
-                        <Link key="compliance" href="/compliance" className="group p-6 bg-white border border-slate-200 rounded-3xl hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-100 transition-all flex flex-col items-start space-y-4 text-slate-800 text-left relative overflow-hidden">
+                        <Link key="compliance" href="/compliance" className="group p-6 bg-white border border-slate-200 rounded-3xl hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-100 transition-all flex flex-col items-start space-y-4 text-slate-800 text-left relative overflow-hidden opacity-0 animate-fade-in-up [animation-delay:1400ms]">
                             <div className="absolute top-0 right-0 w-24 h-24 bg-slate-50 rounded-bl-full -z-10 opacity-50 transition-transform group-hover:scale-110"></div>
                             <div className="flex w-full justify-between items-start pb-1">
                                 <div className="w-12 h-12 bg-slate-100 text-slate-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all transform group-hover:rotate-6">💊</div>
@@ -104,7 +104,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Medical Section */}
-                <div id="medical" className="opacity-0 animate-fade-in-up [animation-delay:800ms]">
+                <div id="medical" className="opacity-0 animate-fade-in-up [animation-delay:1600ms]">
                     <div className="flex items-center gap-4 mb-10">
                         <div className="w-12 h-12 bg-emerald-600 rounded-2xl flex items-center justify-center text-2xl shadow-lg shadow-emerald-200">🩺</div>
                         <div>
@@ -121,8 +121,8 @@ export default function HomePage() {
                             { id: 'creatinine-clearance', icon: '🩸' },
                             { id: 'infusion-rate', icon: '💧' },
                             { id: 'unit-converter', icon: '📏' }
-                        ].map(tool => (
-                            <Link key={tool.id} href={`/calculators/${tool.id}`} className="group p-6 bg-white border border-slate-200 rounded-3xl hover:border-emerald-400 hover:shadow-2xl hover:shadow-emerald-100 transition-all flex flex-col items-start space-y-4 text-slate-800 text-left relative overflow-hidden">
+                        ].map((tool, idx) => (
+                            <Link key={tool.id} href={`/calculators/${tool.id}`} className="group p-6 bg-white border border-slate-200 rounded-3xl hover:border-emerald-400 hover:shadow-2xl hover:shadow-emerald-100 transition-all flex flex-col items-start space-y-4 text-slate-800 text-left relative overflow-hidden opacity-0 animate-fade-in-up" style={{ animationDelay: `${1800 + (idx * 50)}ms` }}>
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-50/50 rounded-bl-full -z-10 opacity-50 transition-transform group-hover:scale-110"></div>
                                 <div className="w-12 h-12 bg-slate-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-emerald-600 group-hover:text-white transition-all transform group-hover:rotate-6">{tool.icon}</div>
                                 <div className="z-10">
@@ -135,7 +135,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Statistical Section */}
-                <div id="statistical" className="opacity-0 animate-fade-in-up [animation-delay:1000ms]">
+                <div id="statistical" className="opacity-0 animate-fade-in-up [animation-delay:2400ms]">
                     <div className="flex items-center gap-4 mb-10">
                         <div className="w-12 h-12 bg-amber-600 rounded-2xl flex items-center justify-center text-2xl shadow-lg shadow-amber-200">📊</div>
                         <div>
@@ -150,8 +150,8 @@ export default function HomePage() {
                             { id: 'odds-ratio', icon: '⚖️' },
                             { id: 'hazard-ratio', icon: '⏳' },
                             { id: 'p-value', icon: '📉' }
-                        ].map(tool => (
-                            <Link key={tool.id} href={`/calculators/${tool.id}`} className="group p-6 bg-white border border-slate-200 rounded-3xl hover:border-amber-400 hover:shadow-2xl hover:shadow-amber-100 transition-all flex flex-col items-start space-y-4 text-slate-800 text-left relative overflow-hidden">
+                        ].map((tool, idx) => (
+                            <Link key={tool.id} href={`/calculators/${tool.id}`} className="group p-6 bg-white border border-slate-200 rounded-3xl hover:border-amber-400 hover:shadow-2xl hover:shadow-amber-100 transition-all flex flex-col items-start space-y-4 text-slate-800 text-left relative overflow-hidden opacity-0 animate-fade-in-up" style={{ animationDelay: `${2600 + (idx * 50)}ms` }}>
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-amber-50/50 rounded-bl-full -z-10 opacity-50 transition-transform group-hover:scale-110"></div>
                                 <div className="w-12 h-12 bg-slate-100 text-amber-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-amber-600 group-hover:text-white transition-all transform group-hover:rotate-6">{tool.icon}</div>
                                 <div className="z-10">
