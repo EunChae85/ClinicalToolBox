@@ -224,7 +224,13 @@
         "sampleSizeResultPower": "Power",
         "sampleSizeResultEffect": "Effect Size",
         "sampleSizeResultDisclaimer": "This result is calculated using simple simulation equations. Please consult an expert statistician for formal clinical trial design.",
-        "faqHeader": "Frequently Asked Questions (FAQ)"
+        "faqHeader": "Frequently Asked Questions (FAQ)",
+        "ValueProp": {
+            "title": "Precision in Trials, Integrity in Data",
+            "subtitle": "Beyond simple math—tools designed to safeguard research integrity.",
+            "p1": "Clinical ToolBox minimizes human error in the field, empowering CRAs and CRCs to focus on critical decision-making and subject safety. Move beyond repetitive manual calculations and focus on the essence of data monitoring.",
+            "p2": "Our formulas strictly adhere to ICH-GCP guidelines and the latest medical standards. Built-in export features provide reliable data for your Monitoring Visit Reports (MVR) and site source documentation."
+        }
     },
     "Tools": {
         "dose_title": "Dose Calculator mg/kg",

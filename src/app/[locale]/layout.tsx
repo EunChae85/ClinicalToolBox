@@ -8,7 +8,6 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import FeedbackButton from '@/components/common/FeedbackButton';
 import Script from 'next/script';
-import AdSlot from '@/components/ads/AdSlot';
 import "../globals.css";
 
 const geistSans = Geist({
@@ -82,7 +81,6 @@ export default async function RootLayout(
             <main className="flex-grow">
               {props.children}
             </main>
-            <AdSlot slot="site-footer" />
             <Footer />
             <FeedbackButton />
           </div>

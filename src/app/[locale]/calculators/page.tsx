@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import AdSlot from '@/components/ads/AdSlot';
 
 export default function CalculatorsPage() {
     const tTools = useTranslations('Tools');
@@ -25,6 +26,22 @@ export default function CalculatorsPage() {
                     <span className="px-4 py-1.5 bg-slate-50 text-slate-600 text-xs font-bold rounded-full border border-slate-100 italic">
                         {tHub('heroVerified')}
                     </span>
+                </div>
+            </div>
+
+            {/* Hub Introduction - More unique content for AdSense */}
+            <div className="mb-20 grid md:grid-cols-2 gap-8 bg-slate-50/50 p-8 md:p-12 rounded-[2.5rem] border border-slate-100">
+                <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-slate-800">{tHub('ValueProp.title')}</h3>
+                    <p className="text-slate-600 leading-relaxed text-sm font-medium">
+                        {tHub('ValueProp.p1')}
+                    </p>
+                </div>
+                <div className="space-y-4">
+                    <div className="h-1 w-12 bg-blue-600/20 rounded-full mb-6"></div>
+                    <p className="text-slate-600 leading-relaxed text-sm font-medium">
+                        {tHub('ValueProp.p2')}
+                    </p>
                 </div>
             </div>
 
@@ -54,7 +71,7 @@ export default function CalculatorsPage() {
                                 <p className="text-xs text-slate-400 mt-2 leading-relaxed">{tTools('schedule_subtitle')}</p>
                             </div>
                         </Link>
-                        
+
                         {[
                             { id: 'visit-window', icon: '📅' },
                             { id: 'enrollment-rate', icon: '📈' },
@@ -154,6 +171,7 @@ export default function CalculatorsPage() {
                     </div>
                 </div>
             </div>
+            <AdSlot slot="calculators-hub-footer" />
         </div>
     );
 }

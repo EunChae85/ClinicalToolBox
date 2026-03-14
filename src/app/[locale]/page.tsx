@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { Metadata } from 'next';
+import AdSlot from '@/components/ads/AdSlot';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
     const t = await getTranslations({ locale, namespace: 'Calculators' });
@@ -20,19 +21,19 @@ export default function HomePage() {
             {/* Hero Section */}
             <div className="mb-20 text-center relative">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-blue-500/10 blur-3xl rounded-full -z-10"></div>
-                <h1 
+                <h1
                     className="text-5xl md:text-6xl font-black tracking-tighter mb-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-slate-800 bg-clip-text text-transparent opacity-0 animate-fade-in-up"
                     style={{ animationDelay: '100ms' }}
                 >
                     {tHub('heroTitle')}
                 </h1>
-                <p 
+                <p
                     className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed whitespace-pre-line opacity-0 animate-fade-in-up"
                     style={{ animationDelay: '600ms' }}
                 >
                     {tHub('heroDesc')}
                 </p>
-                <div 
+                <div
                     className="mt-8 flex justify-center gap-3 opacity-0 animate-fade-in-up"
                     style={{ animationDelay: '1100ms' }}
                 >
@@ -43,6 +44,29 @@ export default function HomePage() {
                     <span className="px-4 py-1.5 bg-slate-50 text-slate-600 text-xs font-bold rounded-full border border-slate-100 italic">
                         {tHub('heroVerified')}
                     </span>
+                </div>
+            </div>
+
+            {/* Value Proposition Section */}
+            <div className="mb-24 py-16 bg-white rounded-[3rem] border border-slate-100 shadow-xl shadow-slate-200/50 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl -z-10 opacity-50"></div>
+                <div className="max-w-4xl mx-auto px-8">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">{tHub('ValueProp.title')}</h2>
+                        <p className="text-lg text-blue-600 font-bold">{tHub('ValueProp.subtitle')}</p>
+                    </div>
+                    <div className="grid md:grid-cols-2 gap-10">
+                        <div className="space-y-4">
+                            <p className="text-slate-600 leading-relaxed font-medium">
+                                {tHub('ValueProp.p1')}
+                            </p>
+                        </div>
+                        <div className="space-y-4">
+                            <p className="text-slate-600 leading-relaxed font-medium">
+                                {tHub('ValueProp.p2')}
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -72,7 +96,7 @@ export default function HomePage() {
                                 <p className="text-xs text-slate-400 mt-2 leading-relaxed">{tTools('schedule_subtitle')}</p>
                             </div>
                         </Link>
-                        
+
                         {[
                             { id: 'visit-window', icon: '📅' },
                             { id: 'enrollment-rate', icon: '📈' },
@@ -172,6 +196,7 @@ export default function HomePage() {
                     </div>
                 </div>
             </div>
+            <AdSlot slot="home-footer" />
         </div>
     );
 }
