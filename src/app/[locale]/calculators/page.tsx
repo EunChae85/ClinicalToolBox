@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import AdSlot from '@/components/ads/AdSlot';
+
 
 export default function CalculatorsPage() {
     const tTools = useTranslations('Tools');
@@ -12,10 +12,10 @@ export default function CalculatorsPage() {
             {/* Hero Section */}
             <div className="mb-20 text-center relative">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-blue-500/10 blur-3xl rounded-full -z-10"></div>
-                <h1 className="text-5xl md:text-6xl font-black tracking-tighter mb-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-slate-800 bg-clip-text text-transparent">
+                <h1 className="text-5xl md:text-6xl font-black tracking-tighter mb-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-slate-800 bg-clip-text text-transparent break-keep">
                     {tHub('heroTitle')}
                 </h1>
-                <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed whitespace-pre-line">
+                <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed whitespace-pre-line break-keep">
                     {tHub('heroDesc')}
                 </p>
                 <div className="mt-8 flex justify-center gap-3">
@@ -30,16 +30,16 @@ export default function CalculatorsPage() {
             </div>
 
             {/* Hub Introduction - More unique content for AdSense */}
-            <div className="mb-20 grid md:grid-cols-2 gap-8 bg-slate-50/50 p-8 md:p-12 rounded-[2.5rem] border border-slate-100">
+            <div className="mb-20 grid md:grid-cols-2 gap-8 bg-slate-50/50 p-6 md:p-12 rounded-[2rem] md:rounded-[2.5rem] border border-slate-100">
                 <div className="space-y-4">
-                    <h3 className="text-xl font-bold text-slate-800">{tHub('ValueProp.title')}</h3>
-                    <p className="text-slate-600 leading-relaxed text-sm font-medium">
+                    <h3 className="text-lg md:text-xl font-bold text-slate-800 break-keep">{tHub('ValueProp.title')}</h3>
+                    <p className="text-slate-600 leading-relaxed text-sm font-medium break-keep">
                         {tHub('ValueProp.p1')}
                     </p>
                 </div>
                 <div className="space-y-4">
-                    <div className="h-1 w-12 bg-blue-600/20 rounded-full mb-6"></div>
-                    <p className="text-slate-600 leading-relaxed text-sm font-medium">
+                    <div className="h-1 w-12 bg-blue-600/20 rounded-full mb-4 md:mb-6"></div>
+                    <p className="text-slate-600 leading-relaxed text-sm font-medium break-keep">
                         {tHub('ValueProp.p2')}
                     </p>
                 </div>
@@ -171,7 +171,7 @@ export default function CalculatorsPage() {
                     </div>
                 </div>
             </div>
-            <AdSlot slot="calculators-hub-footer" />
+
         </div>
     );
 }

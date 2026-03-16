@@ -6,7 +6,6 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import AdSlot from '@/components/ads/AdSlot';
 import { useState } from 'react';
 
 export default function CalculatorPage() {
@@ -168,8 +167,6 @@ export default function CalculatorPage() {
                     </AccordionItem>
                 </Accordion>
             </div>
-            
-            <AdSlot slot="tool-bottom" />
         </div>
     );
 }
