@@ -7,6 +7,7 @@
         "clinical": "임상 운영 도구",
         "medical": "의학용 계산기",
         "statistical": "통계 분석 도구",
+        "regulations": "임상시험 규정 모음\n(Korea)",
         "about": "서비스 소개",
         "privacy": "개인정보 처리방침",
         "guides": "이용 가이드"
@@ -98,6 +99,7 @@
     "Feedback": {
         "title": "피드백 보내기",
         "floatingBtn": "의견 제안",
+        "quickBanner": "임상시험 규정 모음\n(Korea)",
         "footerTitle": "방문해 주셔서 감사합니다!",
         "footerDesc": "전 세계 임상 현장의 사용자들이 함께하고 있습니다.",
         "footerCallToAction": "추가되길 원하는 기능이나 개선 사항이 있다면 언제든 알려주세요. 개발팀이 빠르게 검토하겠습니다!",

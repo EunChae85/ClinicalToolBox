@@ -7,6 +7,7 @@
         "clinical": "Clinical Trial Tools",
         "medical": "Medical Calculators",
         "statistical": "Statistical Tools",
+        "regulations": "Regulations",
         "about": "About Us",
         "privacy": "Privacy Policy",
         "guides": "User Guides"
@@ -98,6 +99,7 @@
     "Feedback": {
         "title": "Send Feedback",
         "floatingBtn": "Feedback",
+        "quickBanner": "Regulations",
         "footerTitle": "Thank you for visiting!",
         "footerDesc": "Users from clinical sites worldwide are joining us.",
         "footerCallToAction": "If there are features you want to add or improvements you'd like to suggest, please feel free to let us know. We build quickly!",
